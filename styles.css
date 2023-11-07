@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    justify-content: space-evenly;
+    background-image: url('images/cinema.jpeg');
+    background-size: cover;
+    user-select: none;
+
+}
+html {
+    height: fit-content;
+}
+body > div {
+    flex: 1 1 auto;
+}
+h1 {
+    color: rgb(23, 177, 228);
+    margin: 15px;
+    background: #000000;
+    text-align: center;
+}
+
+.movie-lists {
+    color: rgb(47, 255, 0);
+    margin-bottom: 5px;
+}
+select {
+    color: aqua;
+    background: #000;
+    border: none;
+    height: 30px;
+    font-size: 15px;
+}
+select span {
+    background: red;
+}
+
+.container {
+    border: 10px solid rgb(41, 95, 34);
+    background:rgb(0, 0, 0, 0.7);
+    color: rgb(203, 139, 19);
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.stage {
+    height: 160px;
+    border: 4px solid rgb(59, 89, 4);
+    position: relative;
+    background: #285f2d;
+    box-shadow: inset 2px 2px 9px 6px black;
+}
+.screen {
+    position: absolute;
+    width: 50%;
+    height: 70%;
+    bottom: 5%;
+    left: 25%;
+    border: rgb(106, 2, 104) solid 10px;
+    border-radius: 10px;
+    background: #0b066e;
+    box-shadow:  -12px 14px 9px 3px rgb(58, 14, 40);
+    transform: rotateX(45deg);
+}
+.screen::after {
+    content: 'Movie is Loading...';
+    color: rgb(219, 205, 205);
+    position: relative;
+    top: 43%;
+    left: 18%;
+}
+.seats {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    background: none;
+    
+}
+.first-column-group,.second-column-group,.third-column-group {
+    display: grid;
+    /* border: 1px solid green; */
+    grid-template-rows: repeat(4,33px); /*34px*/
+    grid-auto-flow: column;
+    gap: 7px;
+    text-align: center;
+}
+.first-column-group,.third-column-group {
+    grid-template-columns: repeat(4,33px); /*33px*/
+}
+.second-column-group {
+    grid-template-columns: repeat(6, 33px); /*33px*/
+}
+
+.seats > div > div {
+    border: 1px solid rgb(107, 99, 12);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding-top: 5px;
+}
+
+.sold {
+    background: rgb(255, 0, 0);
+}
+
+.lets-audit {
+    color: white;
+    border: green 3px solid;
+    background: rgb(29, 45, 45,0.5);
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    margin-top: 175px;
+    text-align: center;
+    width: 100%
+}
+.lets-audit > div {
+    border-left: 1px solid rgb(7, 90, 90);
+}
+.lets-audit h1 {
+    font-size: 18px;
+    background: none;
+    color: rgb(204, 255, 0)
+}
+
+@media screen  and (max-width: 620px){
+    body {
+        width: max-content;
+    }
+}
